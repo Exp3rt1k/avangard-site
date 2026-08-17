@@ -214,3 +214,24 @@ footer {
 #question-block {
     text-align: center;
 }
+/* ===== АДАПТАЦИЯ ПОД ТЕЛЕФОН ===== */
+@media screen and (max-width: 768px) {
+    body { overflow-x: hidden; }
+    header h1 { font-size: 20px !important; }
+    .logo { flex-direction: column; gap: 5px; }
+    .logo img { width: 60px !important; height: 60px !important; }
+    nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 3px; }
+    nav a { font-size: 12px !important; margin: 0 3px !important; padding: 5px 8px !important; }
+    main { padding: 0 6px !important; margin: 10px auto !important; }
+    section { padding: 12px !important; margin-bottom: 12px !important; }
+    section h2 { font-size: 18px !important; }
+    ul li { font-size: 13px !important; padding: 8px 10px !important; }
+    #question-text { font-size: 16px !important; }
+    #answers-block label { font-size: 14px !important; padding: 8px 10px !important; }
+    #question-block button { font-size: 16px !important; padding: 10px 20px !important; min-width: 140px !important; }
+    #quiz-result { font-size: 18px !important; }
+    #quiz-section > div:first-of-type { flex-direction: column !important; gap: 6px !important; align-items: center; }
+    #quiz-section > div:first-of-type button { font-size: 14px !important; padding: 8px 18px !important; width: 80% !important; max-width: 200px; }
+    footer { font-size: 12px !important; padding: 12px !important; }
+}
+
