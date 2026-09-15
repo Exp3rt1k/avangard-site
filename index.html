@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ХК Авангард — Фан-сайт</title>
@@ -9,253 +8,78 @@
 </head>
 <body>
 
-    <header>
-        <div class="logo">
-            <img src="logo.png" alt="ХК Авангард" width="130" height="130" style="border-radius: 16px; box-shadow: 0 0 40px rgba(241,196,15,0.6); border: 3px solid #f1c40f;">
-            <h1>ХК АВАНГАРД</h1>
+    <aside class="sidebar">
+        <div class="sidebar-icon">🦅</div>
+        <nav class="sidebar-nav">
+            <a href="index.html"><span class="icon">🏠</span><span class="label">Главная</span></a>
+            <a href="roster.html"><span class="icon">🏒</span><span class="label">Состав</span></a>
+            <a href="news.html"><span class="icon">📰</span><span class="label">Новости</span></a>
+            <a href="quiz.html"><span class="icon">🧠</span><span class="label">Викторина</span></a>
+            <a href="contact.html"><span class="icon">🧡</span><span class="label">Фан-зона</span></a>
+        </nav>
+    </aside>
+
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-tag">Омские ястребы</p>
+            <h1 class="hero-title">ХК АВАНГАРД</h1>
+            <p class="hero-subtitle">Чемпионы КХЛ 2021. Фан-сайт, сделанный с любовью к команде.</p>
+            <div class="hero-buttons">
+                <a href="roster.html" class="btn-primary">Смотреть состав</a>
+                <a href="quiz.html" class="btn-ghost">Пройти викторину</a>
+            </div>
         </div>
-        <p>⚡ Омские ястребы — чемпионы 2021 ⚡</p>
-    </header>
+        <div class="hero-glow"></div>
+    </section>
 
-    <nav>
-        <a href="#" onclick="showAll()">Главная</a>
-        <a href="#" onclick="showSection('roster')">Состав</a>
-        <a href="#" onclick="showSection('news')">Новости</a>
-        <a href="#" onclick="showSection('fanzone')">Фан-зона</a>
-    </nav>
-
-    <main>
-        <section id="roster">
-            <h2>🏒 Состав команды 2026/2027</h2>
-            <p><strong>Новые игроки сезона:</strong></p>
-            <ul>
-                <li>🇺🇸 <strong>Джош Ливо</strong> — нападающий</li>
-                <li>🇨🇦 <strong>Седрик Пакетт</strong> — нападающий</li>
-                <li>🇷🇺 <strong>Иван Просветов</strong> — вратарь</li>
-                <li>🇷🇺 <strong>Егор Афанасьев</strong> — нападающий</li>
-            </ul>
-            <p><strong>Лидеры:</strong></p>
-            <ul>
-                <li>⭐ <strong>Эндрю Потуральски</strong> — нападающий (№22)</li>
-                <li>⭐ <strong>Николай Прохоркин</strong> — нападающий</li>
-                <li>⭐ <strong>Дамир Шарипзянов</strong> — защитник</li>
-            </ul>
-        </section>
-
-        <section id="news">
-            <h2>📰 Новости — 17 августа 2026</h2>
-            <ul>
-                <li>⚡ «Авангард» улетел на сборы в Санкт-Петербург</li>
-                <li>📋 Ливо, Пакетт, Просветов и Афанасьев — новички сезона</li>
-                <li>🏒 Потуральски тренируется в первой пятёрке</li>
-                <li>🎟️ Старт продаж абонементов со скидкой 20%</li>
-            </ul>
-        </section>
-
-        <section id="fanzone">
-            <h2>🧡 Фан-зона</h2>
-            <p><strong>Ждём первые матчи сезона!</strong> 🏒🔥</p>
-            <ul>
-                <li>📅 Первый домашний матч — <strong>сентябрь 2026</strong></li>
-                <li>🎫 Билеты уже в продаже</li>
-                <li>📢 Кричалка: <strong>«Только Омск и только победа!»</strong></li>
-            </ul>
-        </section>
-<!-- ===== ФОТО КОМАНДЫ (ЗАГЛУШКА) ===== -->
-<section id="team-photo" style="border-left-color: #f1c40f; text-align: center;">
-    <h2>📸 Фото команды 2026/2027</h2>
-    <div style="background: rgba(13, 13, 26, 0.7); border-radius: 18px; padding: 40px 20px; border: 3px dashed #f1c40f; margin-top: 15px;">
-        <div style="font-size: 80px; margin-bottom: 15px;">🏒</div>
-        <p style="font-size: 24px; font-weight: bold; color: #f1c40f;">Скоро здесь будет фото нового состава!</p>
-        <p style="font-size: 18px; color: #aaa;">Команда на сборах в Санкт-Петербурге 🔥</p>
-        <p style="font-size: 14px; color: #666; margin-top: 15px;">⏳ Фото появится после окончания сборов</p>
+    <div class="match-line">
+        <span class="team">Авангард</span>
+        <span class="vs">VS</span>
+        <span class="team">Локомотив</span>
+        <span class="time">22:30</span>
+        <span class="date">18 сентября 2026</span>
     </div>
-</section>
-        <section style="border-left-color: #f1c40f;">
-            <h2>❤️ Мой любимый игрок</h2>
-            <p style="font-size:22px; background:rgba(200,16,46,0.2); padding:15px; border-radius:12px;">
-                🏒 <strong>Эндрю Потуральски</strong> — лучший исполнитель!
 
-                <span style="color:#f1c40f;">«Потуральски — наш мастер!»</span>
-            </p>
-        </section>
+    <section class="section">
+        <div class="container">
+            <p class="section-tag">О команде</p>
+            <h2 class="section-title">Кто такие ястребы</h2>
+            <p class="section-text">«Авангард» — хоккейный клуб из Омска, основанный в 1950 году. Чемпион КХЛ 2021 года, обладатель Кубка Гагарина. Домашняя арена — G-Drive Арена.</p>
+        </div>
+    </section>
 
-        <section id="quiz-section" style="border-left-color: #f1c40f;">
-            <h2>🧠 Викторина: Насколько ты фанат Авангарда?</h2>
-
-            <div style="display: flex; gap: 20px; justify-content: center; margin-bottom: 25px;">
-                <button id="easy-btn" onclick="setEasyMode()" style="background: #c8102e; color: #fff; padding: 12px 35px; border: 3px solid #f1c40f; border-radius: 50px; font-size: 20px; font-weight: bold; cursor: pointer;">🟢 Лёгкий</button>
-                <button id="hard-btn" onclick="setHardMode()" style="background: #0f0f23; color: #ddd; padding: 12px 35px; border: 3px solid #555; border-radius: 50px; font-size: 20px; font-weight: bold; cursor: pointer;">🔴 Сложный</button>
-            </div>
-
-            <p id="quiz-progress">Вопрос 1 из 5</p>
-
-            <div id="quiz-container">
-                <div id="question-block">
-                    <p id="question-text"><strong>1. В каком году Авангард стал чемпионом КХЛ?</strong></p>
-                    <div id="answers-block">
-                        <label><input type="radio" name="q" value="0"> 2019</label>
-
-
-<label><input type="radio" name="q" value="1"> 2021</label>
-
-                        <label><input type="radio" name="q" value="0"> 2022</label>
-
-                        <label><input type="radio" name="q" value="0"> 2023</label>
-                    </div>
-                    <button onclick="nextQuestion()" style="background: #c8102e; color: #fff; padding: 15px 50px; border: 3px solid #f1c40f; border-radius: 60px; font-size: 24px; font-weight: bold; cursor: pointer; margin-top: 25px; display: block; margin-left: auto; margin-right: auto;">✅ Ответить</button>
+    <section class="section">
+        <div class="container">
+            <p class="section-tag">Достижения</p>
+            <h2 class="section-title">Трофеи клуба</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-icon">🏆</div>
+                    <h3>Кубок Гагарина</h3>
+                    <p>2021 — чемпионы КХЛ</p>
                 </div>
-                <div id="quiz-result" style="display: none; text-align: center; font-size: 28px; font-weight: bold; color: #f1c40f; margin-top: 30px;"></div>
+                <div class="card">
+                    <div class="card-icon">🥈</div>
+                    <h3>Серебро КХЛ</h3>
+                    <p>2019, 2023</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🏅</div>
+                    <h3>Кубок Открытия</h3>
+                    <p>2021</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🌟</div>
+                    <h3>Кубок Континента</h3>
+                    <p>2021</p>
+                </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
     <footer>
-        <p>Сделано фанатом ХК Авангард | 🦅 Омск — это хоккей!</p>
+        <p>© 2026 Неофициальный фан-сайт ХК Авангард. Сделано с любовью</p>
     </footer>
 
-    <script>
-        // ===== НАВИГАЦИЯ =====
-        const nav = document.querySelector('nav');
-        const navHeight = nav ? nav.offsetHeight : 0;
-
-        function smoothScrollTo(targetY) {
-            const startY = window.pageYOffset;
-            const distance = targetY - startY;
-            const duration = 500;
-            const startTime = performance.now();
-
-            function step(currentTime) {
-                const elapsed = currentTime - startTime;
-                const progress = Math.min(elapsed / duration, 1);
-                const ease = progress < 0.5 ? 2 * progress * progress : 1 - Math.pow(-2 * progress + 2, 2) / 2;
-                window.scrollTo(0, startY + distance * ease);
-                if (progress < 1) requestAnimationFrame(step);
-            }
-            requestAnimationFrame(step);
-        }
-
-        function showSection(id) {
-            document.querySelectorAll('main section').forEach(s => s.style.display = 'none');
-            const el = document.getElementById(id);
-            if (el) {
-                el.style.display = 'block';
-                setTimeout(() => {
-                    const rect = el.getBoundingClientRect();
-                    const targetY = rect.top + window.pageYOffset - navHeight - 15;
-                    smoothScrollTo(targetY);
-                }, 50);
-            }
-        }
-
-        function showAll() {
-            document.querySelectorAll('main section').forEach(s => s.style.display = 'block');
-            setTimeout(() => {
-                smoothScrollTo(0);
-            }, 50);
-        }
-
-        showAll();
-
-        // ===== ВИКТОРИНА =====
-        const easyQuestions = [
-            { question: '1. В каком году Авангард стал чемпионом КХЛ?', answers: ['2019', '2021', '2022', '2023'], correct: 1 },
-            { question: '2. Как называется домашняя арена Авангарда?', answers: ['Ледовый дворец', 'G-Drive Арена', 'Арена Омск', 'Минск-Арена'], correct: 1 },
-            { question: '3. Какой номер у Эндрю Потуральски?', answers: ['12', '22', '17', '55'], correct: 1 },
-            { question: '4. Какого цвета форма Авангарда в сезоне 2026/2027?', answers: ['Красный и золотой', 'Чёрный и красный', 'Синий и белый', 'Зелёный и белый'], correct: 1 },
-            { question: '5. Кто главный тренер Авангарда в сезоне 2026/2027?', answers: ['Боб Хартли', 'Дмитрий Рябыкин', 'Ги Буше', 'Михаил Кравец'], correct: 2 }
-        ];
-
-        const hardQuestions = [
-            { question: '1. В каком году была основана команда «Авангард»?', answers: ['1949', '1950', '1951', '1952'], correct: 1 },
-            { question: '2. Кто был главным тренером в чемпионский сезон 2020/2021?', answers: ['Дмитрий Рябыкин', 'Боб Хартли', 'Герман Титов', 'Милош Ржига'], correct: 1 },
-            { question: '3. Кто забил победный гол в финале Кубка Гагарина 2021?', answers: ['Рид Буше', 'Оливер Каски', 'Сергей Толчинский', 'Кирилл Семёнов'], correct: 2 },
-            { question: '4. Как назывался стадион «Авангарда» до G-Drive Арены?', answers: ['Арена Омск', 'Ледовый дворец «Омск»', 'СКК им. Блинова', 'Арена-Омск'], correct: 2 },
-            { question: '5. Какой номер навсегда закреплён в «Авангарде»?', answers: ['№5 (Алексей Черепанов)', '№7 (Евгений Шастин)', '№9 (Евгений Малкин)', '№11 (Алексей Калюжный)'], correct: 0 }
-        ];
-
-        let currentQuestions = [];
-        let currentQuestion = 0;
-        let score = 0;
-
-        function setEasyMode() {
-            document.getElementById('easy-btn').style.background = '#c8102e';
-            document.getElementById('easy-btn').style.borderColor = '#f1c40f';
-            document.getElementById('hard-btn').style.background = '#0f0f23';
-            document.getElementById('hard-btn').style.borderColor = '#555';
-            currentQuestions = easyQuestions;
-            currentQuestion = 0;
-            score = 0;
-            document.getElementById('question-block').style.display = 'block';
-            document.getElementById('quiz-result').style.display = 'none';
-            renderQuestion();
-        }
-
-        function setHardMode() {
-            document.getElementById('hard-btn').style.background = '#c8102e';
-            document.getElementById('hard-btn').style.borderColor = '#f1c40f';
-            document.getElementById('easy-btn').style.background = '#0f0f23';
-            document.getElementById('easy-btn').style.borderColor = '#555';
-            currentQuestions = hardQuestions;
-            currentQuestion = 0;
-            score = 0;
-            document.getElementById('question-block').style.display = 'block';
-            document.getElementById('quiz-result').style.display = 'none';
-            renderQuestion();
-        }
-
-        function renderQuestion() {
-            if (currentQuestion >= currentQuestions.length) {
-                document.getElementById('question-block').style.display = 'none';
-                document.getElementById('quiz-progress').textContent = '🎉 Викторина завершена!';
-                const resultDiv = document.getElementById('quiz-result');
-                resultDiv.style.display = 'block';
-                let message = '';
-                const total = currentQuestions.length;
-                if (score === total) message = '🔥 ТЫ НАСТОЯЩИЙ ФАНАТ АВАНГАРДА! ЗНАЕШЬ ВСЁ!';
-                else if (score >= 3) message = '💪 Хороший результат! Ты знаешь команду, но есть куда расти.';
-                else message = '😅 Нужно подтянуть знания. Посмотри матчи и возвращайся!';
-                resultDiv.innerHTML = `🏒 Твой результат: ${score} из ${total} правильных ответов!
-<span style="font-size: 20px;">${message}</span>`;
-                return;
-            }
-
-            const q = currentQuestions[currentQuestion];
-            document.getElementById('quiz-progress').textContent = `Вопрос ${currentQuestion + 1} из ${currentQuestions.length}`;
-            document.getElementById('question-text').innerHTML = `<strong>${q.question}</strong>`;
-
-            const answersBlock = document.getElementById('answers-block');
-            answersBlock.innerHTML = '';
-            q.answers.forEach((answer, index) => {
-                answersBlock.innerHTML += `<label><input type="radio" name="q" value="${index}"> ${answer}</label>
-`;
-            });
-        }
-
-        function nextQuestion() {
-            const selected = document.querySelector('input[name="q"]:checked');
-            if (!selected) {
-                alert('Выбери вариант ответа!');
-                return;
-            }
-
-            const answerIndex = parseInt(selected.value);
-            const q = currentQuestions[currentQuestion];
-            if (answerIndex === q.correct) {
-                score++;
-            }
-
-            currentQuestion++;
-            renderQuestion();
-        }
-
-        // Старт с лёгкого режима
-        currentQuestions = easyQuestions;
-        renderQuestion();
-    </script>
 </body>
 </html>
-
-
-
-

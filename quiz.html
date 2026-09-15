@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Викторина — ХК Авангард</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-icon">🦅</div>
+        <nav class="sidebar-nav">
+            <a href="index.html"><span class="icon">🏠</span><span class="label">Главная</span></a>
+            <a href="roster.html"><span class="icon">🏒</span><span class="label">Состав</span></a>
+            <a href="news.html"><span class="icon">📰</span><span class="label">Новости</span></a>
+            <a href="quiz.html"><span class="icon">🧠</span><span class="label">Викторина</span></a>
+            <a href="contact.html"><span class="icon">🧡</span><span class="label">Фан-зона</span></a>
+        </nav>
+    </aside>
+
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-tag">Проверь себя</p>
+            <h1 class="hero-title">Викторина</h1>
+            <p class="hero-subtitle">Насколько хорошо ты знаешь «Авангард»?</p>
+        </div>
+        <div class="hero-glow"></div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="quiz-controls">
+                <button id="easy-btn" onclick="setEasyMode()" class="btn-primary">🟢 Лёгкий</button>
+                <button id="hard-btn" onclick="setHardMode()" class="btn-ghost">🔴 Сложный</button>
+            </div>
+
+            <p id="quiz-progress" class="quiz-progress">Вопрос 1 из 5</p>
+
+            <div id="question-block">
+                <p id="question-text" class="question-text"><strong>1. В каком году Авангард стал чемпионом КХЛ?</strong></p>
+                <div id="answers-block" class="answers-block">
+                    <label><input type="radio" name="q" value="0"> 2019</label>
+                    <label><input type="radio" name="q" value="1"> 2021</label>
+                    <label><input type="radio" name="q" value="0"> 2022</label>
+                    <label><input type="radio" name="q" value="0"> 2023</label>
+                </div>
+                <button onclick="nextQuestion()" class="btn-primary quiz-btn">✅ Ответить</button>
+            </div>
+
+            <div id="quiz-result" class="quiz-result"></div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Неофициальный фан-сайт ХК Авангард. Сделано с ❤️</p>
+    </footer>
+
+    <script>
+        const easyQuestions = [
+            { question: '1. В каком году Авангард стал чемпионом КХЛ?', answers: ['2019', '2021', '2022', '2023'], correct: 1 },
+            { question: '2. Как называется домашняя арена Авангарда?', answers: ['Ледовый дворец', 'G-Drive Арена', 'Арена Омск', 'Минск-Арена'], correct: 1 },
+            { question: '3. Какой номер у Эндрю Потуральски?', answers: ['12', '22', '17', '55'], correct: 1 },
+            { question: '4. Какого цвета форма Авангарда в сезоне 2026/2027?', answers: ['Красный и золотой', 'Чёрный и красный', 'Синий и белый', 'Зелёный и белый'], correct: 1 },
+            { question: '5. Кто главный тренер Авангарда в сезоне 2026/2027?', answers: ['Боб Хартли', 'Дмитрий Рябыкин', 'Ги Буше', 'Михаил Кравец'], correct: 2 }
+        ];
+
+        const hardQuestions = [
+            { question: '1. В каком году была основана команда «Авангард»?', answers: ['1949', '1950', '1951', '1952'], correct: 1 },
+            { question: '2. Кто был главным тренером в чемпионский сезон 2020/2021?', answers: ['Дмитрий Рябыкин', 'Боб Хартли', 'Герман Титов', 'Милош Ржига'], correct: 1 },
+            { question: '3. Кто забил победный гол в финале Кубка Гагарина 2021?', answers: ['Рид Буше', 'Оливер Каски', 'Сергей Толчинский', 'Кирилл Семёнов'], correct: 2 },
+            { question: '4. Как назывался стадион «Авангарда» до G-Drive Арены?', answers: ['Арена Омск', 'Ледовый дворец «Омск»', 'СКК им. Блинова', 'Арена-Омск'], correct: 2 },
+            { question: '5 Какой номер навсегда закреплён в «Авангарде»?', answers: ['№5 (Алексей Черепанов)', '№7 (Евгений Шастин)', '№9 (Евгений Малкин)', '№11 (Алексей Калюжный)'], correct: 0 }
+        ];
+
+        let currentQuestions = [];
+        let currentQuestion = 0;
+        let score = 0;
+
+        function setEasyMode() {
+            document.getElementById('easy-btn').className = 'btn-primary';
+            document.getElementById('hard-btn').className = 'btn-ghost';
+            currentQuestions = easyQuestions;
+            currentQuestion = 0;
+            score = 0;
+            document.getElementById('question-block').style.display = 'block';
+            document.getElementById('quiz-result').style.display = 'none';
+            renderQuestion();
+        }
+
+        function setHardMode() {
+            document.getElementById('hard-btn').className = 'btn-primary';
+            document.getElementById('easy-btn').className = 'btn-ghost';
+            currentQuestions = hardQuestions;
+            currentQuestion = 0;
+            score = 0;
+            document.getElementById('question-block').style.display = 'block';
+            document.getElementById('quiz-result').style.display = 'none';
+            renderQuestion();
+        }
+
+        function renderQuestion() {
+            if (currentQuestion >= currentQuestions.length) {
+                document.getElementById('question-block').style.display = 'none';
+                document.getElementById('quiz-progress').textContent = '🎉 Викторина завершена!';
+                const resultDiv = document.getElementById('quiz-result');
+                resultDiv.style.display = 'block';
+                let message = '';
+                const total = currentQuestions.length;
+                if (score === total) message = '🔥 ТЫ НАСТОЯЩИЙ ФАНАТ АВАНГАРДА!';
+                else if (score >= 3) message = '💪 Хороший результат!';
+                else message = '😅 Нужно подтянуть знания!';
+                resultDiv.innerHTML = `🏒 Результат: ${score} из ${total}!
+<span style="font-size: 18px;">${message}</span>`;
+                return;
+            }
+
+            const q = currentQuestions[currentQuestion];
+            document.getElementById('quiz-progress').textContent = `Вопрос ${currentQuestion + 1} из ${currentQuestions.length}`;
+            document.getElementById('question-text').innerHTML = `<strong>${q.question}</strong>`;
+
+            const answersBlock = document.getElementById('answers-block');
+            answersBlock.innerHTML = '';
+            q.answers.forEach((answer, index) => {
+                answersBlock.innerHTML += `<label><input type="radio" name="q" value="${index}"> ${answer}</label>`;
+            });
+        }
+
+        function nextQuestion() {
+            const selected = document.querySelector('input[name="q"]:checked');
+            if (!selected) {
+                alert('Выбери вариант ответа!');
+                return;
+            }
+            const answerIndex = parseInt(selected.value);
+            if (answerIndex === currentQuestions[currentQuestion].correct) score++;
+            currentQuestion++;
+            renderQuestion();
+        }
+
+        currentQuestions = easyQuestions;
+        renderQuestion();
+    </script>
+
+</body>
+</html>
